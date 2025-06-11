@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@layer base {
+  .overflow-hidden-scrollable {
+    -ms-overflow-style: none;
+  }
+
+  .overflow-hidden-scrollable::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom theme variables */
+:root {
+  --color-light-primary: #fcfcf9;
+  --color-light-secondary: #f3f3ee;
+  --color-dark-primary: #0a0a0a;
+  --color-dark-secondary: #111111;
+}
+
+/* Custom component styles */
+.citation-link {
+  background-color: var(--color-light-secondary);
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  margin-left: 0.25rem;
+  text-decoration: none;
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.dark .citation-link {
+  background-color: var(--color-dark-secondary);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.action-button {
+  padding: 0.5rem;
+  color: rgba(0, 0, 0, 0.7);
+  border-radius: 0.75rem;
+  transition: background-color 0.2s;
+}
+
+.dark .action-button {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.action-button:hover {
+  background-color: var(--color-light-secondary);
+}
+
+.dark .action-button:hover {
+  background-color: var(--color-dark-secondary);
+}
+
+/* Montserrat font family */
+.font-montserrat {
+  font-family: 'Montserrat', 'Arial', sans-serif;
+}
+
+/* Toast styles */
+#toast-container .toast {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.7);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dark #toast-container .toast {
+  background-color: #1f2937;
+  color: rgba(255, 255, 255, 0.7);
+} 

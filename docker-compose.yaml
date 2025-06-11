@@ -1,0 +1,45 @@
+services:
+  searxng:
+    image: docker.io/searxng/searxng:latest
+    volumes:
+      - ./searxng:/etc/searxng:rw
+    ports:
+      - 4000:8080
+    networks:
+      - intellix-network
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama-data:/root/.ollama
+    ports:
+      - "11434:11434"
+    networks:
+      - intellix-network
+    restart: unless-stopped
+
+  app:
+    build:
+      context: .
+      dockerfile: dockerfile
+    environment:
+      - SEARXNG_API_URL=http://searxng:8080
+      - DATA_DIR=/home/intellix
+    ports:
+      - 3000:3000
+    networks:
+      - intellix-network
+    volumes:
+      - backend-dbstore:/home/intellix/data
+      - uploads:/home/intellix/uploads
+      - ./config.toml:/home/intellix/config.toml
+    restart: unless-stopped
+
+networks:
+  intellix-network:
+
+volumes:
+  backend-dbstore:
+  uploads:
+  ollama-data:
