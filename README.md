@@ -1,7 +1,7 @@
 # Intellix: Advanced AI Chat Platform
 
 <p align="center">
-<img align="center" src="./public/intellix-logo.png" width="300" height="300" alt="Intellix Logo">
+<img align="center" src="./public/logo.png" width="300" height="300" alt="Intellix Logo">
 <p>
 
 *A **powerful AI chat platform** built with Nuxt 3, featuring multi-model AI support, real-time web search, file processing, and advanced reasoning capabilities. Seamlessly integrates with leading AI providers for enhanced productivity and research.*

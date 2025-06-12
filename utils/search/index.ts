@@ -1,4 +1,4 @@
-import MetaSearchAgent from '@/lib/search/metaSearchAgent';
+import MetaSearchAgent from './metaSearchAgent';
 import prompts from '../prompts';
 
 export const searchHandlers: Record<string, MetaSearchAgent> = {
